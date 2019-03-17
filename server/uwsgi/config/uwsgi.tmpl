@@ -1,0 +1,8 @@
+[uwsgi]
+socket = ${UWSGI_ADDR}:${UWSGI_PORT}
+chdir = ${PYTHON_SRC}
+wsgi-file = ${PYTHON_APP}
+callable = ${PYTHON_CALLABLE}
+processes = ${PROC_NUM}
+threads = ${THREAD_NUM}
+master = ${UWSGI_MASTER}

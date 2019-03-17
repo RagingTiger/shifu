@@ -1,0 +1,17 @@
+server {
+    listen ${LISTEN_ADDR};
+    server_name ${DOMAIN_NAME};
+    root /usr/share/nginx/html;
+
+    location ${DYNASERV_ROUTE} {
+        include ${DYNASERV_PARAMS};
+        uwsgi_pass_request_body on;
+        uwsgi_pass_request_headers on;
+        rewrite ${DYNASERV_ROUTE}([^/]+) /$1 break;
+        ${DYNASERV_METHOD} ${DYNASERV_ADDR}:${DYNASERV_PORT};
+    }
+
+    location ${STATSERV_ROUTE} {
+        
+    }
+}
