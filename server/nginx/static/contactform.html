@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Your first HTML form, styled</title>
+    <title>师父 - Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+          maximum-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css"/>
     <style>
       form {
         /* Just to center the form on the page */
@@ -33,24 +36,28 @@
         width: 300px;
         box-sizing: border-box; /* To harmonize the look & feel of text field border */
         border: 1px solid #999;
+        background-color: #000;
+        color: #fff;
       }
 
       input:focus, textarea:focus {
         /* To give a little highlight on active elements */
-        border-color: #000;
+        border-color: #fff;
       }
 
       textarea {
         /* To properly align multiline text fields with their labels */
         vertical-align: top;
         /* To give enough room to type some text */
-        height: 5em;
+        height: 15em;
+        resize: none;
       }
 
       .button {
         /* To position the buttons to the same position of the text fields */
         padding-left: 90px;
         /* same size as the label elements */
+
       }
 
       button {
@@ -61,6 +68,9 @@
 </head>
 
 <body>
+    <h3>
+      <!-- Our job is to help you find the answer you already have. -->
+    </h3>
     <form action="dynamic/contactform_handler" method="get">
         <div>
           <label for="name">Name:</label> <input type="text" id="name" name="user_name">
@@ -69,10 +79,13 @@
           <label for="mail">E-mail:</label> <input type="email" id="mail" name="user_mail">
         </div>
         <div>
-          <label for="msg">Message:</label> <textarea id="msg" name="user_message"></textarea>
+          <label for="prob">Problem:</label> <input type="text" id="prob" name="user_subject">
+        </div>
+        <div>
+          <label for="desc">Description:</label> <textarea id="desc" name="user_message"></textarea>
         </div>
         <div class="button">
-          <button type="submit">Send your message</button>
+          <button type="submit">Send</button>
         </div>
     </form>
 </body>
