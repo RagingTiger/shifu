@@ -3,10 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>师父 - Contact</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,
-          maximum-scale=1.0">
     <link rel="stylesheet" href="styles/main.css"/>
     <style>
+      h1 {
+        font-family: "Courier", monospace;
+        font-size: 20px;
+        text-align:center;
+      }
+
       form {
         /* Just to center the form on the page */
         margin: 0 auto;
@@ -63,25 +67,88 @@
         /* This extra margin represent roughly the same space as the space between the labels and their text fields */
         margin-left: .5em;
       }
+
+      #howto {
+        font-family: "Courier", monospace;
+        padding-bottom:30px;
+        text-align:center;
+      }
+
+      #howto-title {
+        color: inherit;
+        font-size:35px;
+      }
+
+      #advice {
+        padding-top: 30px;
+      }
+
+      #emphasis {
+        color:red;
+      }
     </style>
   </head>
   <body>
-    <h3>
-      <!-- Our job is to help you find the answer you already have. -->
-    </h3>
+    <h1>
+      Assessment
+    </h1>
+    <div id="howto">
+      <p id="advice">
+        Before you fill out the assessment we would like to <i>offer some
+        advice</i>:
+        <br><br><br>
+        <a id="emphasis">you get out what you put in.</a>
+        <br><br><br>
+        This will ultimately <i>help us</i> to <i>help you</i>.
+      </p>
+    </div>
     <form action="dynamic/contactform_handler" method="get">
         <div>
-          <label for="name">Name:</label> <input type="text" id="name" name="user_name" required>
+          <label for="name">Name:</label> <input type="text" id="name" name="name" required>
         </div>
         <div>
-          <label for="mail">E-mail:</label> <input type="email" id="mail" name="user_mail" required>
+          <label for="mail">E-mail:</label> <input type="email" id="mail" name="email" required>
         </div>
+        <!-- <div>
+          <label for="phone">Phone:</label> <input type="text" id="phone" name="phone" required>
+        </div> -->
+        <!-- <div>
+          <label for="age">Age:</label> <input type="text" id="age" name="age" required>
+        </div> -->
+        <!-- <div>
+          <label for="gender">Gender:</label> <input type="text" id="gender" name="gender" required>
+        </div> -->
+        <!-- <div>
+          <label for="race">Race:</label> <input type="text" id="race" name="race" required>
+        </div> -->
+        <!-- <div>
+          <label for="job">Occupation:</label> <input type="text" id="job" name="job" required>
+        </div> -->
+        <!-- <div>
+          <label for="job">Marital Status:</label> <input type="text" id="status" name="status" required>
+        </div> -->
         <div>
-          <label for="prob">Problem:</label> <input type="text" id="prob" name="user_subject" required>
+          <label for="prob">Problem:</label> <input type="text" id="prob" name="problem" required>
         </div>
-        <div>
-          <label for="desc">Description:</label> <textarea id="desc" name="user_message" required></textarea>
-        </div>
+        <!-- <div>
+          <label for="prob">Question 1:</label> <input type="text" id="q1" name="q1" required>
+        </div> -->
+        <!-- <div>
+          <label for="prob">Question 2:</label> <input type="text" id="q2" name="q2" required>
+        </div> -->
+        <!-- <div>
+          <label for="prob">Question 3:</label> <input type="text" id="q3" name="q3" required>
+        </div> -->
+        <!-- <div>
+          <label for="prob">Question 4:</label> <input type="text" id="q4" name="q4" required>
+        </div> -->
+        <!-- <div>
+          <label for="prob">Question 5:</label> <input type="text" id="q5" name="q5" required>
+        </div> -->
+        <!-- <div>
+          <label for="prob">Question 6:</label> <input type="text" id="q6" name="q6" required>
+        </div> -->
+
         <div class="button">
           <button type="submit">Send</button>
         </div>
