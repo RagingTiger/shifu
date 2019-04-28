@@ -14,5 +14,5 @@ services:
       - nuwf
       
 networks:
-  nuwf_stack:
+  nuwf:
     driver: bridge
