@@ -4,6 +4,25 @@
     <meta charset="utf-8">
     <title>师父 - Assessment</title>
     <link rel="stylesheet" href="styles/main.css"/>
+    <script type="text/javascript">
+      function genage() {
+        var min = 18,
+            max = 122,
+            select = document.getElementById('age');
+
+        for (var i = min; i<=max; i++){
+          var opt = document.createElement('option');
+          opt.value = i;
+          opt.innerHTML = i;
+          select.appendChild(opt);
+        }
+
+        var opt = document.createElement('option');
+        opt.value = 'Immortal';
+        opt.innerHTML = 'Immortal';
+        select.appendChild(opt);
+      }
+    </script>
     <style>
       h1 {
         font-family: "Courier", monospace;
@@ -14,7 +33,7 @@
       form {
         /* Just to center the form on the page */
         margin: 0 auto;
-        width: 400px;
+        width: 500px;
         /* To see the outline of the form */
         padding: 1em;
         border: 1px solid #CCC;
@@ -28,19 +47,8 @@
       label {
         /* To make sure that all labels have the same size and are properly aligned */
         display: inline-block;
-        width: 90px;
+        width: 100px;
         text-align: right;
-      }
-
-      input, textarea {
-        /* To make sure that all text fields have the same font settings By default, textareas have a monospace font */
-        font: 1em sans-serif;
-        /* To give the same size to all text fields */
-        width: 300px;
-        box-sizing: border-box; /* To harmonize the look & feel of text field border */
-        border: 1px solid #999;
-        background-color: #000;
-        color: #fff;
       }
 
       input:focus, textarea:focus {
@@ -58,9 +66,8 @@
 
       .button {
         /* To position the buttons to the same position of the text fields */
-        padding-left: 90px;
+        padding-left: 98px;
         /* same size as the label elements */
-
       }
 
       button {
@@ -71,6 +78,7 @@
       #howto {
         font-family: "Courier", monospace;
         padding-bottom:30px;
+        padding-top:30px;
         text-align:center;
       }
 
@@ -80,75 +88,214 @@
       }
 
       #advice {
-        padding-top: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: auto;
+        text-align: justify;
+        width: 500px;
       }
 
-      #emphasis {
-        color:red;
+      #inputtxt {
+        /* To make sure that all text fields have the same font settings By default, textareas have a monospace font */
+        font: 1em sans-serif;
+        /* To give the same size to all text fields */
+        width: 300px;
+        box-sizing: border-box; /* To harmonize the look & feel of text field border */
+        border: 1px solid #999;
+        background-color: #000;
+        color: #fff;
+      }
+
+      #patxt {
+        padding-left: 105px;
+        margin: inherit;
+        text-align: center;
+        vertical-align: top;
+        width: 300px;
+      }
+
+      #quest {
+        /* To make sure that all labels have the same size and are properly aligned */
+        display: inline-flex;
+        width: 300px;
+        text-align: justify;
+      }
+
+      #cbbox {
+        width: 0px;
+        padding-left: 101px;
+        display: inline;
+      }
+
+      #cblbl {
+        display: inline;
+        text-align: left;
       }
     </style>
   </head>
-  <body>
+  <body onload="genage()">
     <h1>
       Assessment
     </h1>
     <div id="howto">
       <p id="advice">
-        Before you fill out the assessment we would like to <i>offer some
-        advice</i>:
-        <br><br><br>
-        <a id="emphasis">you get out what you put in.</a>
-        <br><br><br>
-        This will ultimately <i>help us</i> to <i>help you</i>.
+        Before you fill out the assessment we would like to offer some
+        advice:
+        <span style="color:red;">you get out what you put in</span>.
+        The more time and energy you put into answering the questions on the
+        assessment, the easier it is for us to understand what is your problem
+        and how best to guide you.
       </p>
     </div>
     <form action="dynamic/contactform_handler" method="get">
         <div>
-          <label for="name">Name:</label> <input type="text" id="name" name="name" required>
+          <label for="name">Name:</label> <input type="text" id="inputtxt" name="name" required>
         </div>
         <div>
-          <label for="mail">E-mail:</label> <input type="email" id="mail" name="email" required>
+          <label for="mail">E-mail:</label> <input type="email" id="inputtxt" name="email" required>
         </div>
         <!-- <div>
-          <label for="phone">Phone:</label> <input type="text" id="phone" name="phone" required>
-        </div> -->
-        <!-- <div>
-          <label for="age">Age:</label> <input type="text" id="age" name="age" required>
-        </div> -->
-        <!-- <div>
-          <label for="gender">Gender:</label> <input type="text" id="gender" name="gender" required>
-        </div> -->
-        <!-- <div>
-          <label for="race">Race:</label> <input type="text" id="race" name="race" required>
-        </div> -->
-        <!-- <div>
-          <label for="job">Occupation:</label> <input type="text" id="job" name="job" required>
-        </div> -->
-        <!-- <div>
-          <label for="job">Marital Status:</label> <input type="text" id="status" name="status" required>
+          <label for="phone">Phone:</label> <input type="tel" id="phone" name="phone" required>
         </div> -->
         <div>
-          <label for="prob">Problem:</label> <input type="text" id="prob" name="problem" required>
+          <label for="job">Occupation:</label> <input type="text" id="inputtxt" name="job" required>
         </div>
-        <!-- <div>
-          <label for="prob">Question 1:</label> <input type="text" id="q1" name="q1" required>
-        </div> -->
-        <!-- <div>
-          <label for="prob">Question 2:</label> <input type="text" id="q2" name="q2" required>
-        </div> -->
-        <!-- <div>
-          <label for="prob">Question 3:</label> <input type="text" id="q3" name="q3" required>
-        </div> -->
-        <!-- <div>
-          <label for="prob">Question 4:</label> <input type="text" id="q4" name="q4" required>
-        </div> -->
-        <!-- <div>
-          <label for="prob">Question 5:</label> <input type="text" id="q5" name="q5" required>
-        </div> -->
-        <!-- <div>
-          <label for="prob">Question 6:</label> <input type="text" id="q6" name="q6" required>
-        </div> -->
-
+        <div>
+          <label for="age">Age:</label>
+          <select id="age" name="age" required>
+              <option value="">--Please choose an option--</option>
+          </select>
+        </div>
+        <div>
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+              <option value="">--Please choose an option--</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="nonbinary">Nonbinary</option>
+              <option value="prefer not to answer">Prefer not to answer</option>
+          </select>
+        </div>
+        <div>
+          <label for="ethnicity">Ethnicity:</label>
+          <select id="ethnicity" name="ethnicity" required>
+              <option value="">--Please choose an option--</option>
+              <option value="asian">Asian</option>
+              <option value="african">Black/African</option>
+              <option value="caucasian">Caucasian</option>
+              <option value="hispanic">Hispanic/Latino</option>
+              <option value="native american">Native American</option>
+              <option value="pacific islander">Pacific Islander</option>
+              <option value="prefer not to say">Prefer not to answer</option>
+              <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="status">Marital Status:</label>
+          <select id="status" name="status" required>
+              <option value="">--Please choose an option--</option>
+              <option value="married">Married</option>
+              <option value="single">Single</option>
+          </select>
+        </div>
+        <div>
+          <label for="service">Service:</label>
+          <select id="service" name="service" required>
+              <option value="">--Please choose an option--</option>
+              <option value="basic">Basic</option>
+          </select>
+        </div>
+        <div>
+          <label for="probtype">Problem Type:</label>
+          <select id="probtype" name="probtype" required>
+              <option value="">--Please choose an option--</option>
+              <option value="career">Career</option>
+              <option value="identity">Identity</option>
+              <option value="familial">Familial</option>
+              <option value="romantic">Dating/Romantic</option>
+              <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="probdesc">Problem:</label>
+          <textarea id="inputtxt" name="probdesc"></textarea>
+        </div>
+        <div>
+          <label>Question 1:</label>
+          <label for="q1" id="quest">
+            If you were stranded on a desert island with only 3 items, what
+            3 items would you choose and why?
+          </label>
+          <div id="patxt">
+            <textarea id="inputtxt" name="q1"></textarea>
+          </div>
+        </div>
+        <div>
+          <label>Question 2:</label>
+          <label for="q2" id="quest">
+            If you were stranded on a desert island with only 3 items, what
+            3 items would you choose and why?
+          </label>
+          <div id="patxt">
+            <textarea id="inputtxt" name="q2"></textarea>
+          </div>
+        </div>
+        <div>
+          <label>Question 3:</label>
+          <label for="q3" id="quest">
+            If you were stranded on a desert island with only 3 items, what
+            3 items would you choose and why?
+          </label>
+          <div id="patxt">
+            <textarea id="inputtxt" name="q3"></textarea>
+          </div>
+        </div>
+        <div>
+          <label>Question 4:</label>
+          <label for="q4" id="quest">
+            If you were stranded on a desert island with only 3 items, what
+            3 items would you choose and why?
+          </label>
+          <div id="patxt">
+            <textarea id="inputtxt"name="q4"></textarea>
+          </div>
+        </div>
+        <div>
+          <label>Question 5:</label>
+          <label for="q5" id="quest">
+            If you were stranded on a desert island with only 3 items, what
+            3 items would you choose and why?
+          </label>
+          <div id="patxt">
+            <textarea id="inputtxt" name="q5"></textarea>
+          </div>
+        </div>
+        <div>
+          <label>Question 6:</label>
+          <label for="q6" id="quest">
+            If you were stranded on a desert island with only 3 items, what
+            3 items would you choose and why?
+          </label>
+          <div id="patxt">
+            <textarea id="inputtxt" name="q6"></textarea>
+          </div>
+        </div>
+        <div>
+            <div id="cbbox">
+              <input type="checkbox" value="true" name="accept_tos" required></input>
+            </div>
+            <div id="cblbl">
+              I have read and agree to the<a id="hili" href="terms_of_service.html">Terms of Service</a>
+            </div>
+        </div>
+        <div>
+            <div id="cbbox">
+              <input type="checkbox" value="true" name="accept_pp" required></input>
+            </div>
+            <div id="cblbl">
+              I have read and agree to the <a id="hili" href="privacy_policy.html">Privacy Policy</a>
+            </div>
+        </div>
         <div class="button">
           <button type="submit">Send</button>
         </div>
