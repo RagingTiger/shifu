@@ -8,11 +8,14 @@ services:
       - nuwf
   uwsgi:
     build: server/uwsgi/
+    environment:
+      - GMAIL_ACCOUNT=${GMAIL_ACCOUNT}
+      - GMAIL_APP_PSSWD=${GMAIL_APP_PSSWD}
     ports:
       - "9090:9090"
     networks:
       - nuwf
-      
+
 networks:
   nuwf:
     driver: bridge
