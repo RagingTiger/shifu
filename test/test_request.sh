@@ -1,0 +1,1 @@
+curl -X GET 'http://127.0.0.1:5000/assessment_form_handler?name=Ron+Swanson&email=test%40example.com&job=Unemployed&age=32&gender=male&ethnicity=caucasian&status=single&service=basic&probtype=identity&probdesc=f+&q1=sdf+&q2=asdf+&q3=asdf+&q4=asdf+&q5=asdf+as&q6=df+asdf+&accept_tos=true&accept_pp=true'
