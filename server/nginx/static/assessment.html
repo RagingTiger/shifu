@@ -33,7 +33,7 @@
       form {
         /* Just to center the form on the page */
         margin: 0 auto;
-        width: 500px;
+        width: 430px;
         /* To see the outline of the form */
         padding: 1em;
         border: 1px solid #CCC;
@@ -78,13 +78,8 @@
       #howto {
         font-family: "Courier", monospace;
         padding-bottom:30px;
-        padding-top:30px;
+        padding-top:50px;
         text-align:center;
-      }
-
-      #howto-title {
-        color: inherit;
-        font-size:35px;
       }
 
       #advice {
@@ -92,7 +87,7 @@
         padding-bottom: 15px;
         margin: auto;
         text-align: justify;
-        width: 500px;
+        width: 430px;
       }
 
       #inputtxt {
@@ -140,8 +135,7 @@
     <div id="howto">
       <p id="advice">
         Before you fill out the assessment we would like to offer some
-        advice:
-        <span style="color:red;">you get out what you put in</span>.
+        advice: <span style="color:red;">you get out what you put in</span>.
         The more time and energy you put into answering the questions on the
         assessment, the easier it is for us to understand what is your problem
         and how best to guide you.
@@ -149,8 +143,12 @@
     </div>
     <form action="dynamic/assessment_form_handler" method="get">
         <div>
-          <label for="name">Name:</label>
-          <input type="text" id="inputtxt" name="name" required>
+          <label for="name">First Name:</label>
+          <input type="text" id="inputtxt" name="first_name" required>
+        </div>
+        <div>
+          <label for="name">Last Name:</label>
+          <input type="text" id="inputtxt" name="last_name" required>
         </div>
         <div>
           <label for="mail">E-mail:</label>
@@ -237,59 +235,46 @@
         <div>
           <label>Question 2:</label>
           <label for="q2" id="quest">
-            If you were stranded on a desert island with only 3 items, what
-            3 items would you choose and why?
+            Package of money wrongly delivered to your house. What is your
+            immediate reaction? What do you decide to do and why?
           </label>
           <div id="patxt">
             <textarea id="inputtxt" name="q2" required></textarea>
           </div>
         </div>
-        <div>
+        <!-- <div>
           <label>Question 3:</label>
-          <label for="q3" id="quest">
-            If you were stranded on a desert island with only 3 items, what
-            3 items would you choose and why?
+          <label for="q2" id="quest">
+            The poor farmer and the rich farmer.
           </label>
           <div id="patxt">
-            <textarea id="inputtxt" name="q3" required></textarea>
+            <textarea id="inputtxt" name="q2" required></textarea>
           </div>
+        </div> -->
+        <div>
+            <div id="cbbox">
+              <input type="checkbox" value="true" name="not_minor" required></input>
+            </div>
+            <div id="cblbl">
+              I certify that I am at least 18+ years of age
+            </div>
         </div>
         <div>
-          <label>Question 4:</label>
-          <label for="q4" id="quest">
-            If you were stranded on a desert island with only 3 items, what
-            3 items would you choose and why?
-          </label>
-          <div id="patxt">
-            <textarea id="inputtxt"name="q4" required></textarea>
-          </div>
-        </div>
-        <div>
-          <label>Question 5:</label>
-          <label for="q5" id="quest">
-            If you were stranded on a desert island with only 3 items, what
-            3 items would you choose and why?
-          </label>
-          <div id="patxt">
-            <textarea id="inputtxt" name="q5" required></textarea>
-          </div>
-        </div>
-        <div>
-          <label>Question 6:</label>
-          <label for="q6" id="quest">
-            If you were stranded on a desert island with only 3 items, what
-            3 items would you choose and why?
-          </label>
-          <div id="patxt">
-            <textarea id="inputtxt" name="q6" required></textarea>
-          </div>
+            <div id="cbbox">
+              <input type="checkbox" value="true" name="accept_disclaimer" required></input>
+            </div>
+            <div id="cblbl">
+              I have read and agree to the
+              <a id="hili" href="disclaimer.html">Disclaimer</a>
+            </div>
         </div>
         <div>
             <div id="cbbox">
               <input type="checkbox" value="true" name="accept_tos" required></input>
             </div>
             <div id="cblbl">
-              I have read and agree to the<a id="hili" href="terms_of_service.html">Terms of Service</a>
+              I have read and agree to the
+              <a id="hili" href="terms_of_service.html">Terms of Service</a>
             </div>
         </div>
         <div>
@@ -297,7 +282,8 @@
               <input type="checkbox" value="true" name="accept_pp" required></input>
             </div>
             <div id="cblbl">
-              I have read and agree to the <a id="hili" href="privacy_policy.html">Privacy Policy</a>
+              I have read and agree to the
+              <a id="hili" href="privacy_policy.html">Privacy Policy</a>
             </div>
         </div>
         <div class="button">
