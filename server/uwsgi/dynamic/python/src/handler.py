@@ -15,7 +15,7 @@ def assessment_form_response(request):
 
     # get request arg key/val
     for key, value in query.items():
-      assessment += fstr.format(key.capitalize(), value)
+      assessment += fstr.format(key.replace('_', ' ').capitalize(), value)
 
     # get user ip key/val
     assessment += fstr.format('User-IP', user_ip)
@@ -25,10 +25,12 @@ def assessment_form_response(request):
       assessment += (fstr.format(key, value))
 
     # get info for email subject
-    subject = query['name'].replace(' ', '+') + ' | ' + \
-              query['email'] + ' | ' + \
-              query['gender'].replace(' ', '+') + ' | ' + \
-              query['ethnicity'].replace(' ', '+') + ' | ' + user_ip
+    subject = query.get('first_name', 'No') + '+' + \
+              query.get('last_name', 'Name') + ' | ' + \
+              query.get('email', 'No Email') + ' | ' + \
+              query.get('gender', 'No Gender') + ' | ' + \
+              query.get('ethnicity', 'No Ethnicity') + ' | ' + user_ip
+
 
     # format into html
     html_response = html_format.format(assessment)
