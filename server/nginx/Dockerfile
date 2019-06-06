@@ -19,10 +19,6 @@ ENV LISTEN_ADDR='80' \
     DYNASERV_PORT='9090'
 
 # entry command
-CMD /bin/sh -c \
-    "envsubst < \
-     /etc/nginx/webserver.tmpl > \
-     /etc/nginx/conf.d/webserver.conf && \
-     nginx -g 'daemon off;' || \
-     printf '\n---> CONFIG ERROR: Check settings printed below\n\n' && \
-     cat /etc/nginx/conf.d/webserver.conf"
+WORKDIR /home
+COPY entrypoint.sh .
+CMD /bin/sh entrypoint.sh
